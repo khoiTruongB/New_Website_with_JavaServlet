@@ -1,5 +1,7 @@
 package com.khoi.dao.impl;
 
-public class NewDAO {
+import com.khoi.dao.INewDAO;
+
+public class NewDAO implements INewDAO{
 
 }
