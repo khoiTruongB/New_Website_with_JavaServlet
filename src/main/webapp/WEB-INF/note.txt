@@ -1,0 +1,1 @@
+khi tạo project thì phải tạo đúng folder WEB-INF thì hệ thống mới tạo file war
