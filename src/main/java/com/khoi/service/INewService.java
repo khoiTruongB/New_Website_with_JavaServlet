@@ -1,5 +1,10 @@
 package com.khoi.service;
 
-public interface INewService {
+import java.util.List;
 
+import com.khoi.model.NewsModel;
+
+public interface INewService {
+	List<NewsModel> findByCategoryCode(String code);
+	NewsModel save(NewsModel newsModel);
 }

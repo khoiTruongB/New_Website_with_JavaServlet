@@ -1,5 +1,27 @@
 package com.khoi.service.impl;
 
-public class NewService {
+import java.util.List;
+
+import javax.inject.Inject;
+
+import com.khoi.dao.INewDAO;
+import com.khoi.model.NewsModel;
+import com.khoi.service.INewService;
+
+public class NewService implements INewService{
+
+	@Inject
+	private INewDAO newDAO;
+	
+	@Override
+	public List<NewsModel> findByCategoryCode(String code) {
+		return newDAO.findByCategoryCode(code);
+	}
+
+	@Override
+	public NewsModel save(NewsModel newsModel) {
+		Long newId = newDAO.save(newsModel);
+		return null;
+	}
 
 }

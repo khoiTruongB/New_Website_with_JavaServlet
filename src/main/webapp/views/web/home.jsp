@@ -7,9 +7,9 @@
 <title>Trang chủ</title>
 </head>
 <body>
+<h1></h1>
   <!-- Page Content -->
   <div class="container">
-
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7">
