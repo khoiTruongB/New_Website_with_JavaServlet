@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.khoi.model.NewsModel;
 import com.khoi.service.ICategoryService;
 import com.khoi.service.INewService;
 
@@ -29,13 +28,12 @@ public class HomeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		NewsModel newsModel = new NewsModel();
-		newsModel.setTitle("bài 8");
-		newsModel.setContent("bài 5");
-		newsModel.setCategoryId(1l);
-
-		newService.save(newsModel);
-		request.setAttribute("categorys", categoryService.findAll());
+//		NewsModel newsModel = new NewsModel();
+//		newsModel.setId(9l);
+//		
+//
+//		newService.delete(newsModel);
+//		request.setAttribute("categorys", categoryService.findAll());
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
 		rd.forward(request, response);
 	}

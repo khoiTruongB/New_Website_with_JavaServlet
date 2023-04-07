@@ -13,7 +13,7 @@ import java.util.List;
 import com.khoi.dao.IGenericDAO;
 import com.khoi.mapper.IRowMapper;
 
-/** */
+
 public class AdstractDAO<T> implements IGenericDAO<T> {
 
 	public Connection getConnection() {
@@ -24,7 +24,7 @@ public class AdstractDAO<T> implements IGenericDAO<T> {
 			String PASS = "";
 			return DriverManager.getConnection(URL, USER, PASS);
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return null;
@@ -48,7 +48,7 @@ public class AdstractDAO<T> implements IGenericDAO<T> {
 			}
 			return results;
 		} catch (SQLException e) {
-			// TODO: handle exception
+			
 		} finally {
 			try {
 				if (conn != null) {
@@ -85,7 +85,7 @@ public class AdstractDAO<T> implements IGenericDAO<T> {
 				}
 			}
 		} catch (SQLException e) {
-			// TODO: handle exception
+			
 		}
 
 	}

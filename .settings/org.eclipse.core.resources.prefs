@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/khoi/controller/admin/api/NewAPI.java=UTF-8
 encoding//src/main/java/com/khoi/controller/web/HomeController.java=UTF-8
 encoding//src/main/java/com/khoi/dao/IGenericDAO.java=UTF-8
+encoding//src/main/java/com/khoi/utils/HttpUtil.java=UTF-8
 encoding//src/main/webapp/WEB-INF/note.txt=UTF-8

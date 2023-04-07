@@ -13,10 +13,11 @@ public class NewsMapper implements IRowMapper<NewsModel> {
 		try {
 			newsModel.setId(rs.getLong("id"));
 			newsModel.setTitle(rs.getString("title"));
+			newsModel.setContent(rs.getString("title"));
 			newsModel.setCategoryId(rs.getLong("categoryid"));
+			
 			return newsModel;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
