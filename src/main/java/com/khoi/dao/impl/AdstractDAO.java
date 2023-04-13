@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,27 +69,7 @@ public class AdstractDAO<T> implements IGenericDAO<T> {
 		return null;
 	}
 
-	private void setParameter(PreparedStatement stm, Object... parameter) {
 
-		try {
-			for (int i = 0; i < parameter.length; i++) {
-				int index = i + 1;
-				Object para = parameter[i];
-				if (para instanceof String) {
-					stm.setString(index, (String) para);
-				}else if (para instanceof Long) {
-					stm.setLong(index, (Long) para);
-				}else if (para instanceof Integer) {
-					stm.setInt(index, (Integer) para);
-				}else if (para instanceof Timestamp) {
-					stm.setTimestamp(index, (Timestamp) para);
-				}
-			}
-		} catch (SQLException e) {
-			
-		}
-
-	}
 
 	@Override
 	public void update(String sql, Object... parameter) {
@@ -170,6 +151,29 @@ public class AdstractDAO<T> implements IGenericDAO<T> {
 			}
 		}
 		return null;
+	}
+	
+	/**set đối số cho sql*/
+	private void setParameter(PreparedStatement stm, Object... parameter) {
+
+		try {
+			for (int i = 0; i < parameter.length; i++) {
+				int index = i + 1;
+				Object para = parameter[i];
+				if (para instanceof String) {
+					stm.setString(index, (String) para);
+				}else if (para instanceof Long) {
+					stm.setLong(index, (Long) para);
+				}else if (para instanceof Integer) {
+					stm.setInt(index, (Integer) para);
+				}else if (para instanceof Timestamp) {
+					stm.setTimestamp(index, (Timestamp) para);
+				}
+			}
+		} catch (SQLException e) {
+			
+		}
+
 	}
 
 }

@@ -1,16 +1,10 @@
 package com.khoi.model;
 
-import java.sql.Timestamp;
-
-public class CommentModel {
+public class CommentModel extends AdstractModel {
 	private long id;
 	private long content;
 	private long user_id;
 	private long new_id;
-	private Timestamp createdDate;
-	private Timestamp modifiedDate;
-	private String createdBy;
-	private String modifiedBy;
 
 	public CommentModel() {
 
@@ -46,38 +40,6 @@ public class CommentModel {
 
 	public void setNew_id(long new_id) {
 		this.new_id = new_id;
-	}
-
-	public Timestamp getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Timestamp createdDate) {
-		this.createdDate = createdDate;
-	}
-
-	public Timestamp getModifiedDate() {
-		return modifiedDate;
-	}
-
-	public void setModifiedDate(Timestamp modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public String getModifiedBy() {
-		return modifiedBy;
-	}
-
-	public void setModifiedBy(String modifiedBy) {
-		this.modifiedBy = modifiedBy;
 	}
 
 }

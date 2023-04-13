@@ -17,11 +17,11 @@ import com.khoi.service.INewService;
 @WebServlet(urlPatterns = { "/trang-chu" })
 public class HomeController extends HttpServlet {
 
-	@Inject
-	private ICategoryService categoryService;
-
-	@Inject
-	private INewService newService;
+//	@Inject
+//	private ICategoryService categoryService;
+//
+//	@Inject
+//	private INewService newService;
 
 	private static final long serialVersionUID = 1L;
 
@@ -38,8 +38,4 @@ public class HomeController extends HttpServlet {
 		rd.forward(request, response);
 	}
 
-	protected void dopost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
 }

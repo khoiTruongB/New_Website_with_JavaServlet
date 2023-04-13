@@ -19,34 +19,56 @@ import com.khoi.utils.HttpUtil;
 public class NewAPI extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
 	private INewService newService;
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		ObjectMapper mapper = new ObjectMapper();
-		
-		//set font tiếng việt cho server
+
+		// set font tiếng việt cho server
 		request.setCharacterEncoding("utf-8");
-		//set kiểu dữ liệu khi trả về cho client
+		// set kiểu dữ liệu khi trả về cho client
 		response.setContentType("application/json");
-		
+
 		// map từ json đến các fleld của model
 		NewsModel newsModel = HttpUtil.of(request.getReader()).toModel(NewsModel.class);
 		newsModel = newService.save(newsModel);
-		//trả data về dạng json
+		// trả data về dạng json
 		mapper.writeValue(response.getOutputStream(), newsModel);
 	}
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		ObjectMapper mapper = new ObjectMapper();
+
+		// set font tiếng việt cho server
+		request.setCharacterEncoding("utf-8");
+		// set kiểu dữ liệu khi trả về cho client
+		response.setContentType("application/json");
+		// map từ json đến các fleld của model
+		NewsModel updateNew = HttpUtil.of(request.getReader()).toModel(NewsModel.class);
+		updateNew = newService.put(updateNew);
+		// trả data về dạng json
+		mapper.writeValue(response.getOutputStream(), updateNew);
+
 	}
-//
-//	protected void doDelete(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//
-//	}
+
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		ObjectMapper mapper = new ObjectMapper();
+
+		// set font tiếng việt cho server
+		request.setCharacterEncoding("utf-8");
+		// set kiểu dữ liệu khi trả về cho client
+		response.setContentType("application/json");
+		// map từ json đến các fleld của model
+		NewsModel newsModel = HttpUtil.of(request.getReader()).toModel(NewsModel.class);
+		newService.delete(newsModel.getIds());
+		mapper.writeValue(response.getOutputStream(), "{}");
+	}
 }

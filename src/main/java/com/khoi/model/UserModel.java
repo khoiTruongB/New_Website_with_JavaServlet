@@ -1,18 +1,13 @@
 package com.khoi.model;
 
-import java.sql.Timestamp;
-
-public class UserModel {
+public class UserModel extends AdstractModel{
 	private long id;
 	private String userName;
 	private String passWord;
 	private String fullName;
 	private int status;
 	private long roleid;
-	private Timestamp createdDate;
-	private Timestamp modifiedDate;
-	private String createdBy;
-	private String modifiedBy;
+	
 
 	public UserModel() {
 		super();
@@ -66,36 +61,5 @@ public class UserModel {
 		this.roleid = roleid;
 	}
 
-	public Timestamp getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Timestamp createdDate) {
-		this.createdDate = createdDate;
-	}
-
-	public Timestamp getModifiedDate() {
-		return modifiedDate;
-	}
-
-	public void setModifiedDate(Timestamp modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public String getModifiedBy() {
-		return modifiedBy;
-	}
-
-	public void setModifiedBy(String modifiedBy) {
-		this.modifiedBy = modifiedBy;
-	}
-
+	
 }

@@ -9,5 +9,5 @@ public interface INewDAO extends IGenericDAO<NewsModel>{
 	List<NewsModel> findByCategoryCode(String code);
 	Long save(NewsModel newsModel);
 	void put (NewsModel newsModel);
-	void delele (NewsModel newsModel);
+	void delele (long id);
 }

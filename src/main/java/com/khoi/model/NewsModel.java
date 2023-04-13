@@ -1,19 +1,14 @@
 package com.khoi.model;
 
-import java.sql.Timestamp;
-
-public class NewsModel {
+public class NewsModel extends AdstractModel{
 	private long id;
 	private String title;
 	private String thumbnail;
 	private String shortDescription;
 	private String content;
 	private long categoryId;
-	private Timestamp createdDate;
-	private Timestamp modifiedDate;
-	private String createBby;
-	private String modifieBby;
-
+	
+	
 	public NewsModel() {
 
 	}
@@ -64,38 +59,6 @@ public class NewsModel {
 
 	public void setCategoryId(long categoryId) {
 		this.categoryId = categoryId;
-	}
-
-	public Timestamp getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Timestamp createdDate) {
-		this.createdDate = createdDate;
-	}
-
-	public Timestamp getModifiedDate() {
-		return modifiedDate;
-	}
-
-	public void setModifiedDate(Timestamp modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
-
-	public String getCreateBby() {
-		return createBby;
-	}
-
-	public void setCreateBby(String createBby) {
-		this.createBby = createBby;
-	}
-
-	public String getModifieBby() {
-		return modifieBby;
-	}
-
-	public void setModifieBby(String modifieBby) {
-		this.modifieBby = modifieBby;
 	}
 
 }
