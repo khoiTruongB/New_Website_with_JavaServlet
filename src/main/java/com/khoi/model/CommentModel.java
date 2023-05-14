@@ -1,6 +1,6 @@
 package com.khoi.model;
 
-public class CommentModel extends AdstractModel {
+public class CommentModel extends AdstractModel<CommentModel> {
 	private long id;
 	private long content;
 	private long user_id;

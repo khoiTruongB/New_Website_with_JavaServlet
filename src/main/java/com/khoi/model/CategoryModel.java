@@ -1,6 +1,6 @@
 package com.khoi.model;
 
-public class CategoryModel extends AdstractModel{
+public class CategoryModel extends AdstractModel<CategoryModel>{
 	private long id;
 	private String name;
 	private String code;
