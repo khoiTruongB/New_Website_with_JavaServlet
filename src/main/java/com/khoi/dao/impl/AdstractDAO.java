@@ -153,7 +153,7 @@ public class AdstractDAO<T> implements IGenericDAO<T> {
 		return null;
 	}
 	
-	/**set đối số cho sql*/
+	/**set tham số cho sql*/
 	private void setParameter(PreparedStatement stm, Object... parameter) {
 
 		try {
@@ -174,6 +174,43 @@ public class AdstractDAO<T> implements IGenericDAO<T> {
 			
 		}
 
+	}
+
+	@Override
+	public int Count(String sql, Object... parameter) {
+		Connection conn = null;
+		PreparedStatement stm = null;
+		ResultSet rs = null;
+		try {
+			int count = 0;
+			conn = getConnection();
+			stm = conn.prepareStatement(sql);
+			// set parameter
+			setParameter(stm, parameter);
+			rs = stm.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+			return count;
+		} catch (SQLException e) {
+			
+		} finally {
+			try {
+				if (conn != null) {
+					conn.close();
+
+				}
+				if (conn != null) {
+					stm.close();
+				}
+				if (conn != null) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				return 0;
+			}
+		}
+		return 0;
 	}
 
 }
