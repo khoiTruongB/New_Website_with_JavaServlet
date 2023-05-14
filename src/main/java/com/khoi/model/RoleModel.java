@@ -1,6 +1,6 @@
 package com.khoi.model;
 
-public class RoleModel extends AdstractModel{
+public class RoleModel extends AdstractModel<RoleModel>{
 	private long id;
 	private String name;
 	private String code;

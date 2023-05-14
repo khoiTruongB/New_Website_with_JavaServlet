@@ -1,6 +1,6 @@
 package com.khoi.model;
 
-public class NewsModel extends AdstractModel{
+public class NewsModel extends AdstractModel<NewsModel>{
 	private long id;
 	private String title;
 	private String thumbnail;

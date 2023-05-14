@@ -1,6 +1,6 @@
 package com.khoi.model;
 
-public class UserModel extends AdstractModel{
+public class UserModel extends AdstractModel<UserModel>{
 	private long id;
 	private String userName;
 	private String passWord;
