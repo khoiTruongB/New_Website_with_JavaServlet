@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import com.khoi.dao.INewDAO;
 import com.khoi.model.NewsModel;
+import com.khoi.paging.Pageble;
 import com.khoi.service.INewService;
 
 public class NewService implements INewService {
@@ -46,6 +47,16 @@ public class NewService implements INewService {
 		for (long id : ids) {
 			newDAO.delele(id);
 		}
+	}
+
+	@Override
+	public List<NewsModel> findAll(Pageble pageble) {
+		return newDAO.findAll(pageble);
+	}
+
+	@Override
+	public int getToltalItem() {
+		return newDAO.getToltalItem();
 	}
 
 }
