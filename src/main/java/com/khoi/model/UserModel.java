@@ -5,9 +5,9 @@ public class UserModel extends AdstractModel<UserModel>{
 	private String userName;
 	private String passWord;
 	private String fullName;
-	private int status;
+	private Integer status;
 	private long roleid;
-	
+	private RoleModel role = new RoleModel();//
 
 	public UserModel() {
 		super();
@@ -45,13 +45,7 @@ public class UserModel extends AdstractModel<UserModel>{
 		this.fullName = fullname;
 	}
 
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
+	
 
 	public long getRoleid() {
 		return roleid;
@@ -59,6 +53,22 @@ public class UserModel extends AdstractModel<UserModel>{
 
 	public void setRoleid(long roleid) {
 		this.roleid = roleid;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public RoleModel getRole() {
+		return role;
+	}
+
+	public void setRole(RoleModel role) {
+		this.role = role;
 	}
 
 	

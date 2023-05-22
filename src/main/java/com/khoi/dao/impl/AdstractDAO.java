@@ -7,22 +7,29 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.khoi.dao.IGenericDAO;
 import com.khoi.mapper.IRowMapper;
 
 
 public class AdstractDAO<T> implements IGenericDAO<T> {
-
+	
+	//get data từ file các file .properties
+	ResourceBundle bundle = ResourceBundle.getBundle("db");
+	
 	public Connection getConnection() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			String URL = "jdbc:mysql://localhost:3306/newdb";
-			String USER = "root";
-			String PASS = "";
+			Class.forName(bundle.getString("driverName"));
+			String URL = bundle.getString("url");
+			String USER = bundle.getString("use");
+			String PASS = bundle.getString("password");
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			String URL = "jdbc:mysql://localhost:3306/newdb";
+//			String USER = "root";
+//			String PASS = "";
 			return DriverManager.getConnection(URL, USER, PASS);
 		} catch (ClassNotFoundException | SQLException e) {
 

@@ -17,8 +17,19 @@
 	<filter-mapping>
 		<filter-name>sitemesh</filter-name>
 		<url-pattern>/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
+		<!-- <dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher> -->
+	</filter-mapping>
+
+	<filter>
+		<filter-name>servletFilter</filter-name>
+		<filter-class>com.khoi.filter.AuthorizationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>servletFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<!-- <dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher> -->
 	</filter-mapping>
 
 
